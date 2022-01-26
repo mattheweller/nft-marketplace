@@ -1,4 +1,4 @@
-## Full stack NFT marketplace built with Polygon, Solidity, IPFS, & Next.js
+# Full stack NFT marketplace built with Polygon, Solidity, IPFS, & Next.js
 
 Mint NFTs on the Mumbai testnet and list them for sale. You can even sell them to your friends. Make sure to connect your wallet on the Mumbai testnet
 
@@ -12,7 +12,7 @@ To run this project locally, follow these steps.
 
 1. Clone the project locally, change into the directory, and install the dependencies:
 
-# install using Yarn
+### install using Yarn
 ```
 yarn
 ```
@@ -65,7 +65,9 @@ yarn dev
 ```
 
 ### Deploying contracts to Mumbai
-
+1. Deploy to Mumbai
+2. Verify your contracts
+3. 
 
 ```
 npx hardhat run scripts/deploy.js --network mumbai
