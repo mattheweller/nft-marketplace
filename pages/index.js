@@ -1,7 +1,7 @@
 import { ethers } from 'ethers'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Image } from 'next/image'
+import Image from 'next/image'
 import Web3Modal from "web3modal"
 
 import {
