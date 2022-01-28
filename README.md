@@ -2,6 +2,12 @@
 
 Mint NFTs on the Mumbai testnet and list them for sale. You can even sell them to your friends. Make sure to connect your wallet on the Mumbai testnet
 
+This Marketplace allows you to do the following:
+- Create NFTs on the Mumbai testnet - Which you can check out on [Opensea Testnet](https://testnets.opensea.io/account!)
+- Set a sale price of your NFT
+- provide a list of NFTs that you've minted, and ones that you own
+- Allows you to "buy" and transfer ownership of those NFTs
+
 This is my project to go along with Nader Dabit's blog post [Building a Full Stack NFT Marketplace on Ethereum with Polygon](https://dev.to/dabit3/building-scalable-full-stack-apps-on-ethereum-with-polygon-2cfb)
 
 ### Running this project
@@ -65,14 +71,13 @@ yarn dev
 ```
 
 ### Deploying contracts to Mumbai
-1. Deploy to Mumbai
-2. Verify your contracts
-3. 
-
+1. Deploy to Mumbai with the following command:
 ```
 npx hardhat run scripts/deploy.js --network mumbai
+```
+
+2. Verify your contracts - using your deployed contract addresses:
+```
 npx hardhat verify --network mumbai 0x02f696d4Cf0B61376FF1c9fe6b669b4F7bD8055C
 npx hardhat verify --network mumbai 0xC4B9D5414D3931027C7529A7E598072ab1F20F48 "0x02f696d4Cf0B61376FF1c9fe6b669b4F7bD8055C"
 ```
-
-Check out your NFTs on https://testnets.opensea.io/account!
