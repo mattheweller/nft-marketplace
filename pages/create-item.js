@@ -106,7 +106,7 @@ export default function CreateItem() {
         />
         {
           fileUrl && (
-            <img alt="new NFT" src={nft.image} className="rounded" />
+            <img alt="new NFT" src={fileUrl} className="rounded mt-4" />
           )
         }
         <button onClick={createMarket} className="font-bold mt-4 bg-pink-500 text-white rounded p-4 shadow-lg">
