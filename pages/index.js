@@ -2,13 +2,10 @@ import { ethers } from 'ethers'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Web3Modal from "web3modal"
-
-import {
-  nftaddress, nftmarketaddress
-} from '../config'
-
+import { nftaddress, nftmarketaddress } from '../config'
 import NFT from '../artifacts/contracts/NFT.sol/NFT.json'
 import Market from '../artifacts/contracts/Market.sol/NFTMarket.json'
+import Image from 'next/image'
 
 let rpcEndpoint = null
 
@@ -58,6 +55,7 @@ export default function Home() {
       value: price
     })
     await transaction.wait()
+    console.log(transaction.hash)
     loadNFTs()
   }
   if (loadingState === 'loaded' && !nfts.length) return (<h1 className="px-20 py-10 text-3xl">No items in marketplace</h1>)
@@ -68,7 +66,12 @@ export default function Home() {
           {
             nfts.map((nft, i) => (
               <div key={i} className="border shadow rounded-xl overflow-hidden">
-                <img alt="NFT image" src={nft.image} />
+                <Image
+                  src={nft.image}
+                  alt="NFT Image"
+                  width={450}
+                  height={450}
+                />
                 <div className="p-4">
                   <p style={{ height: '64px' }} className="text-2xl font-semibold">{nft.name}</p>
                   <div style={{ height: '70px', overflow: 'hidden' }}>

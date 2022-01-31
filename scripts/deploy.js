@@ -29,26 +29,6 @@ async function main() {
   let nftAddress = txReceipt.contractAddress
 
   console.log("nft deployed to:", nftAddress);  
-//   const timeoutMsg = () => { console.log("Wating for verification...") }
-
-//   try {
-//     setTimeout(timeoutMsg, 5000);
-//     await hre.run("verify:verify", { address: nftMarketAddress });
-//     console.log("NFT Marketplace verified!");
-//   } catch (err) {
-//     console.log(err);
-//   }
-  
-//   try {
-//     setTimeout(timeoutMsg, 5000);
-//     await hre.run("verify:verify", { 
-//       address: nftAddress,
-//       constructorArguments: [nftMarketAddress]
-//     });
-//     console.log("NFT contract verified!");
-//   } catch (err) {
-//     console.log(err);
-//   }
 }
 
 main()
