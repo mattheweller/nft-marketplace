@@ -2,7 +2,6 @@ import { ethers } from 'ethers'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Web3Modal from "web3modal"
-import Image from 'next/image'
 import { nftmarketaddress, nftaddress } from '../config'
 import Market from '../artifacts/contracts/Market.sol/NFTMarket.json'
 import NFT from '../artifacts/contracts/NFT.sol/NFT.json'
@@ -53,13 +52,7 @@ export default function CreatorDashboard() {
           {
             nfts.map((nft, i) => (
               <div key={i} className="border shadow rounded-xl overflow-hidden">
-                <Image
-                  src={nft.image}
-                  alt="NFT Image"
-                  className="rounded"
-                  width={450}
-                  height={450}
-                />
+                <img alt="new NFT"  src={nft.image} className="rounded" />
                 <div className="p-4 bg-black">
                   <p className="text-2xl font-bold text-white">Price - {nft.price} Eth</p>
                 </div>
@@ -77,13 +70,7 @@ export default function CreatorDashboard() {
                 {
                   sold.map((nft, i) => (
                     <div key={i} className="border shadow rounded-xl overflow-hidden">
-                      <Image
-                        src={nft.image}
-                        alt="NFT Image"
-                        className="rounded"
-                        width={450}
-                        height={450}
-                      />
+                      <img alt="new NFT" src={nft.image} className="rounded" />
                       <div className="p-4 bg-black">
                         <p className="text-2xl font-bold text-white">Price - {nft.price} Eth</p>
                       </div>

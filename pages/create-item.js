@@ -3,7 +3,6 @@ import { ethers } from 'ethers'
 import { create as ipfsHttpClient } from 'ipfs-http-client'
 import { useRouter } from 'next/router'
 import Web3Modal from 'web3modal'
-import Image from 'next/image'
 
 const client = ipfsHttpClient('https://ipfs.infura.io:5001/api/v0')
 
@@ -107,13 +106,7 @@ export default function CreateItem() {
         />
         {
           fileUrl && (
-            <Image
-              src={nft.image}
-              alt="NFT Image"
-              className="rounded"
-              width={450}
-              height={450}
-            />
+            <img alt="new NFT" src={nft.image} className="rounded" />
           )
         }
         <button onClick={createMarket} className="font-bold mt-4 bg-pink-500 text-white rounded p-4 shadow-lg">
