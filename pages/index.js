@@ -6,12 +6,6 @@ import { nftaddress, nftmarketaddress } from '../config'
 import NFT from '../artifacts/contracts/NFT.sol/NFT.json'
 import Market from '../artifacts/contracts/Market.sol/NFTMarket.json'
 
-let rpcEndpoint = null
-
-if (process.env.NEXT_PUBLIC_WORKSPACE_URL) {
-  rpcEndpoint = process.env.NEXT_PUBLIC_WORKSPACE_URL
-}
-
 export default function Home() {
   const [nfts, setNfts] = useState([])
   const [loadingState, setLoadingState] = useState('not-loaded')
@@ -19,10 +13,11 @@ export default function Home() {
     loadNFTs()
   }, [])
   async function loadNFTs() {    
-    const provider = new ethers.providers.JsonRpcProvider(rpcEndpoint)
+    const provider = new ethers.providers.JsonRpcProvider("https://rpc-mumbai.maticvigil.com")
     const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider)
     const marketContract = new ethers.Contract(nftmarketaddress, Market.abi, provider)
     const data = await marketContract.fetchMarketItems()
+    console.log(data)
     
     const items = await Promise.all(data.map(async i => {
       const tokenUri = await tokenContract.tokenURI(i.tokenId)
@@ -37,6 +32,7 @@ export default function Home() {
         name: meta.data.name,
         description: meta.data.description,
       }
+      console.log(item)
       return item
     }))
     setNfts(items)
