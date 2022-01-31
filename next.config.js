@@ -4,7 +4,5 @@ module.exports = {
     return config;
   },
   reactStrictMode: true,
-  images: {
-    disableStaticImages: true,
-  }
+  swcMinify: true,
 }
